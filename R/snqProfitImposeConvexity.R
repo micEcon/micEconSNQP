@@ -2,7 +2,7 @@ snqProfitImposeConvexity <- function( estResult, rankReduction = 0,
    start = 10, optimMethod = "BFGS", control = list( maxit=5000 ),
    stErMethod = "none", nRep = 1000, verbose = 0 ) {
 
-   if( class( estResult ) != "snqProfitEst" ) {
+   if( !inherits( estResult, "snqProfitEst" ) ) {
       stop( "argument 'estResult' must be of class 'snqProfitEst'" )
    }
    if( !( stErMethod %in% c( "none", "jackknife", "resample", "coefSim" ) ) ) {
