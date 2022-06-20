@@ -36,11 +36,12 @@
 \author{Arne Henningsen}
 
 \examples{
-   # just a stupid simple example
-   snqProfitFixEla( matrix(1:6/6,3,2 ), matrix(4:1/4,2 ), c(1,1,1), c(1,1),
-      c(0.4,0.3,0.3) )
+# just a stupid simple example
+snqProfitFixEla( matrix(1:6/6,3,2 ), matrix(4:1/4,2 ), c(1,1,1), c(1,1),
+   c(0.4,0.3,0.3) )
 
-   # now with real data
+# now with real data
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput   / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -59,6 +60,7 @@
    snqProfitFixEla( estResult$coef$delta, estResult$coef$gamma,
       estResult$data[ 20, quantNames ], estResult$data[ 20, fixNames ],
       estResult$weights, estResult$scalingFactors )
+}
 }
 
 \keyword{models}

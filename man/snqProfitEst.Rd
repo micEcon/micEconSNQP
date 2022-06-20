@@ -179,6 +179,7 @@
 
 
 \examples{
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -210,6 +211,7 @@
    # to units of measurement so that different scaling factors 
    # result in different estimates of elasticities:
    all.equal( estResult2$ela, estResultNoScale$ela )
+}
 }
 
 \keyword{models}

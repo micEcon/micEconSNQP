@@ -22,6 +22,7 @@
 
 \examples{
 \dontrun{library( systemfit )}
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -31,6 +32,7 @@
 
    estResult <- snqProfitEst( priceNames, quantNames, "land", data = germanFarms )
    print( estResult )
+}
 }
 
 \keyword{models}

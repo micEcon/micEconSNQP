@@ -23,10 +23,11 @@
 \author{Arne Henningsen}
 
 \examples{
-   # just a stupid simple example
-   snqProfitHessian( matrix(101:109,3,3), c(1,1,1), c(0.4,0.3,0.3) )
+# just a stupid simple example
+snqProfitHessian( matrix(101:109,3,3), c(1,1,1), c(0.4,0.3,0.3) )
 
-   # now with real data
+# now with real data
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput   / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -42,6 +43,7 @@
    # Hessian at the last observation (1994/95)
    snqProfitHessian( estResult$coef$beta, estResult$data[ 20, priceNames ],
       estResult$weights, estResult$scalingFactors )
+}
 }
 
 \keyword{models}

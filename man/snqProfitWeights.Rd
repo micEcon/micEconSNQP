@@ -50,6 +50,7 @@
 \author{Arne Henningsen}
 
 \examples{
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput   / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -57,6 +58,7 @@
    priceNames <- c( "pOutput", "pVarInput", "pLabor" )
    quantNames <- c( "qOutput", "qVarInput", "qLabor" )
    snqProfitWeights( priceNames, quantNames, germanFarms )
+}
 }
 
 \keyword{models}

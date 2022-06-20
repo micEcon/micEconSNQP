@@ -53,6 +53,7 @@
 
 
 \examples{
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -65,6 +66,7 @@
    estResult <- snqProfitEst( priceNames, quantNames, fixNames, data = germanFarms )
    snqProfitCalc( priceNames, fixNames, estResult$data, estResult$weights,
       estResult$scalingFactors, estResult$coef )
+}
 }
 
 \keyword{models}

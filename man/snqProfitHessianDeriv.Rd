@@ -24,10 +24,11 @@
 \author{Arne Henningsen}
 
 \examples{
-   # just a stupid simple example
-   snqProfitHessianDeriv( c(1,2,3),c(0.4,0.3,0.3) )
+# just a stupid simple example
+snqProfitHessianDeriv( c(1,2,3),c(0.4,0.3,0.3) )
 
-   # now with real data
+# now with real data
+if( requireNamespace( 'micEcon', quietly = TRUE ) ) {
    data( germanFarms, package = "micEcon" )
    germanFarms$qOutput   <- germanFarms$vOutput   / germanFarms$pOutput
    germanFarms$qVarInput <- -germanFarms$vVarInput / germanFarms$pVarInput
@@ -39,6 +40,7 @@
    estResult <- snqProfitEst( priceNames, quantNames, c("land","time"), data=germanFarms )
 
    snqProfitHessianDeriv( estResult$pMean, estResult$weights, 2 )
+}
 }
 
 \keyword{models}
