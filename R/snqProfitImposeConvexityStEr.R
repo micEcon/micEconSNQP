@@ -31,7 +31,7 @@
             scalingFactors = estResult$scalingFactors,
             weights = estResult$weights, method = estResult$method ),
             silent = TRUE )
-         if( class( simResult) == "try-error" ) {
+         if( inherits( simResult, "try-error" ) ) {
             sim$status[ repNo ] <- 888
          } else {
             if( simResult$convexity ) {
@@ -41,7 +41,7 @@
                   rankReduction = rankReduction, start = start,
                   optimMethod = optimMethod, control = control ),
                   silent = TRUE )
-               if( class( simResult) == "try-error" ) {
+               if( inherits( simResult, "try-error" ) ) {
                   sim$status[ repNo ] <- 999
                } else {
                   sim$status[ repNo ] <- simResult$mindist$convergence
@@ -88,7 +88,7 @@
                rankReduction = rankReduction, start = start,
                optimMethod = optimMethod, control = control ),
                silent = ( verbose < 2 ) )
-            if( class( simResult) == "try-error" ) {
+            if( inherits( simResult, "try-error" ) ) {
                sim$status[ repNo ] <- 999
             } else {
                sim$status[ repNo ] <- simResult$mindist$convergence
