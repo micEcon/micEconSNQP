@@ -1,8 +1,13 @@
 THIS IS THE CHANGELOG OF THE "micEconSNQP" PACKAGE
 
 Please note that only the most recent and the most significant changes are
-reported here. A full ChangeLog is available in the log messages of the SVN
-repository on R-Forge.
+reported here. A full ChangeLog is available in the log messages of the Git
+repository at GitHub: https://github.com/micEcon/micEconSNQP
+
+
+   CHANGES IN VERSION 0.6-10 (2022/06/20)
+   
+* the package can now be checked without 'suggested' packages
 
 
    CHANGES IN VERSION 0.6-8 (2020/02/10)
